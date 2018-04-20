@@ -1,0 +1,11 @@
+<loader *ngIf="showLoader"></loader>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 no-padding full-height leftcol">
+      <left-hand-panel (loaded)="hideLoader()"></left-hand-panel>
+    </div>
+    <div class="col-md-10 offset-md-2 no-padding full-height">
+      <workspace (loaded)="hideLoader()"></workspace>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "version" : "LOCAL",
+    "port" : "80",
+    "ignoreTopics" : ["__consumer_offsets","connect", "localdev_denis_b"],
+    "zookeeper": "10.221.9.158:9001,10.221.24.77:9001,10.221.18.127:9001",
+    "brokerhost": "10.221.9.158:9001,10.221.24.77:9001,10.221.18.127:9001",
+    "consumerGroups": ["resource-manager", "middleware-lms-tracking", "middleware.metrics", "middleware", "manual-sync", "grades-manager", "middleware.lms"],
+    "log": {
+      "folder": "/logs/kafkan/generic.log",
+      "stream": "console",
+      "level": "info"
+    }
+}

@@ -1,0 +1,75 @@
+{
+  "lintOptions": {
+    "typeCheck": true
+  },
+  "extends": "tslint:recommended",
+  "rules": {
+    
+    "no-parameter-properties": false,
+   "align": {
+        "options": [
+            "parameters",
+            "statements",
+            "members",
+            "elements"
+        ]
+    },
+    "arrow-return-shorthand": true,
+    "comment-format": [
+        true,
+        "check-space"
+    ],
+    "member-access": true,
+    "only-arrow-functions": [
+        true,
+        "allow-declarations",
+        "allow-named-functions"
+    ],
+    "quotemark": {
+        "options": [
+            "single",
+            "avoid-escape"
+        ]
+    },
+    "no-var-requires": false,
+    "no-empty": false,
+    "no-any": false,
+    "no-magic-numbers": false,
+    "no-non-null-assertion": false,
+    "no-null-keyword": false,
+    "no-require-imports": false,
+    "no-unbound-method": false,
+    "no-unnecessary-qualifier": false,
+    "no-void-expression": false,
+    "prefer-function-over-method": false,
+    "strict-type-predicates": false,
+    "triple-equals": false,
+    "typedef": false,
+
+    "ban": [true,
+      ["describe", "only"],
+      ["it", "only"]
+    ],
+
+    "interface-name": false,
+    "max-classes-per-file": 1,
+    "max-line-length": [true, 280],
+    "member-ordering": [true, 
+      "public-before-private",
+      "static-before-instance",
+      "variables-before-functions"
+    ],
+    "no-console": {
+      "options": ["log"]
+    },
+    "no-switch-case-fall-through": true,
+    "prefer-const": false,
+    "switch-default": false,
+    "variable-name": [true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
+  }
+}

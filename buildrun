@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd static/kafkanUI
+echo '============= build the UI  -- if this fails, try npm install -g gulp then run this script again =========='
+gulp prod
+cd ../..
+echo '============= build the server =========='
+gulp prod
+echo '============= containerize it -- if you get errors the first time, worry not.  Just as long as you see node started at the bottom =========='
+docker rm -f franz
+docker rmi -f kafkan
+docker build -t=kafkan .
+docker run -it -d -p=80:80 --name=franz kafkan
+docker logs -f franz

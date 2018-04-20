@@ -1,0 +1,25 @@
+#!/bin/sh
+
+cd static/kafkanUI
+echo '============= build the UI  -- if this fails, try npm install -g gulp then run this script again =========='
+gulp prod
+cd ../..
+echo '============= build the server =========='
+gulp prod
+echo '============= containerize it -- if you get errors the first time, worry not.  Just as long as you see node started at the bottom =========='
+docker rm -f franz
+docker rmi -f kafkan
+docker build -t=kafkan .
+echo '============= build the tests =========='
+gulp test
+echo '============= build the image for the tests based on the image just built for Kafkan =========='
+docker rm -f kktest
+docker rmi -f kafkantest
+docker build -t kafkantest -f dockerfiletest .
+echo '============= launch the test container and run the tests =========='
+docker run -it -v="$(pwd)"/coverage:/home/kafkan/coverage --name=kktest kafkantest
+
+echo '============= launch the kafkan container =========='
+
+docker run -it -d -p=7020:7020 -v="$(pwd)"/config:/home/kafkan/config --name=franz kafkan
+docker logs -f franz

@@ -1,0 +1,59 @@
+<div class="table-responsive">
+<table class="table table-condensed white-background">
+    <caption>{{ topic.topicName }}</caption>
+    <thead>
+        <tr>
+            <td>
+                Partition #
+            </td>
+            <td>
+                Leader
+            </td>
+            <td>
+                Replicas
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let partition of partitions">
+            <td>
+                {{ partition.partition }}
+            </td>
+            <td>
+                {{ partition.leader }}
+            </td>
+            <td>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <td>
+                                Broker
+                            </td>
+                            <td>
+                                Leader?
+                            </td>
+                            <td>
+                                In Sync?
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let replica of partition.replicas">
+                            <td>
+                                {{ replica.broker }}
+                            </td>
+                            <td>
+                                {{ replica.leader }}
+                            </td>
+                            <td>
+                                {{ replica.in_sync }}
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

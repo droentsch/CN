@@ -1,0 +1,22 @@
+plugins {
+    id "com.moowork.node" version "1.2.0"
+}
+apply plugin:'base'
+
+node {
+    version = '6.11.5'
+    npmVersion = '3.10.10'
+    download = true
+}
+
+task wrapper(type:Wrapper) {
+    gradleVersion = '2.11'
+}
+
+task rebuild(type: NpmTask) {
+    args = ['run', 'build.prod']
+}
+
+task test(type: NpmTask) {
+    args = ['run', 'test']
+}

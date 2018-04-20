@@ -1,0 +1,57 @@
+body {
+    background: no-repeat center/100% url('/app/img/background.jpg');
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.top-margin-sm {
+    margin-top: 2.5em;
+}
+.italicize {
+    font-style: italic;
+}
+.white-text {
+    color: #ffffff;
+}
+.black-background {
+    background-color: #000000;
+}
+.bold-text {
+    font-weight: 9;
+}
+.blue-background {
+    background-color: #0000FF;
+}
+.full-height {
+    min-height: 100%;
+}
+.leftcol {
+    background-color: #000000;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+.leftcol-background {
+    background: no-repeat center/100% url('/app/img/leftcolbg.jpg');
+    background-attachment: fixed;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.linkify {
+    cursor: pointer;
+}
+.white-background {
+    background-color: #FFFFFF;
+}
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.show-pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+FROM kafkan
+LABEL maintainer=dan_roentsch_lms_mhe
+
+COPY dist/testing/ /home/kafkan/testing/
+COPY config/server-config.json /home/kafkan/config/
+COPY config/kafka-rest.properties /home/kafkan/config/
+COPY scripts/runTests.sh /home/kafkan/
+COPY scripts/gulpfile.js /home/kafkan/
+
+RUN \
+   cd /home/kafkan && \
+   npm i gulp-cli -g 
+    
+
+CMD ["/home/kafkan/runTests.sh"]

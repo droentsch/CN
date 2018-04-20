@@ -1,0 +1,8 @@
+<div>
+    <ul class="nav flex-column nav-pills">
+        <li class="nav-item" *ngFor='let consumer of consumers'>
+            <!-- Need a different click action here -->
+            <span class="nav-link white-text bold-text show-pointer" (click)="toggleCurrentConsumer(consumer)">{{ consumer }}</span>
+        </li>
+    </ul>
+</div>

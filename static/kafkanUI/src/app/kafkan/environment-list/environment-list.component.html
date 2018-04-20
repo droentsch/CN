@@ -1,0 +1,8 @@
+<div>
+    <ul class="nav flex-column nav-pills">
+        <li class="nav-item" *ngFor='let environment of environments'>
+            <span class="nav-link white-text bold-text show-pointer" (click)="toggleCurrentEnvironment(environment)">{{ environment }}</span>
+            <topic-filter [environment]="environment" *ngIf="isCurrentEnvironment(environment)"></topic-filter>
+        </li>
+    </ul>
+</div>

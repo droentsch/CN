@@ -1,0 +1,8 @@
+<error-msg *ngIf="hasError" [message]="errorMessage"></error-msg>
+<div class="btn-group-vertical">
+<div class="btn btn-secondary linkify" (click)="toggleEnvironments()">Show environments</div>
+<environment-list *ngIf="showEnvironmentList" (error)="showError()"></environment-list>
+<div class="btn btn-secondary linkify" (click)="toggleConsumers()">Show consumer groups</div>
+<consumer-list *ngIf="showConsumerList" (error)="showError()"></consumer-list>
+<div class="btn btn-secondary linkify" (click)="getSyncStatus()">Get Sync Status</div>
+</div>

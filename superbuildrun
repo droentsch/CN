@@ -1,0 +1,9 @@
+#!/bin/sh
+echo '============= npm install =========='
+npm install
+echo '============= npm install again only for the UI=========='
+cd static/kafkanUI
+npm install
+cd ../..
+echo '============= containerize it -- if you get errors the first time, worry not.  Just as long as you see node started at the bottom =========='
+./buildruntest

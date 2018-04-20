@@ -1,0 +1,15 @@
+<div>
+    <error-msg *ngIf="showError" [message]="errorMessage"></error-msg>
+    <div *ngIf="hasTopicCollection">
+        <div *ngFor="let topic of topics">
+            <div class="row">
+                <div class="col-md-4">
+                    <partition [topic]="topic" [yAxisMax]="yAxisMax"></partition>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <partition-detail [topic]="topic"></partition-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
